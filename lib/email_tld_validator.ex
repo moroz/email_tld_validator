@@ -18,6 +18,10 @@ defmodule EmailTldValidator do
 
   def tld_valid?(_), do: false
 
+  def email_valid?(email) do
+    regexp_validate(email) && tld_validate(email)
+  end
+
   def tld_validate(email) do
     email
     |> String.split(".")
