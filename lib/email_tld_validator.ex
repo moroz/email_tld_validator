@@ -24,11 +24,12 @@ defmodule EmailTldValidator do
 
   def tld_validate(email) do
     email
+    |> String.trim()
     |> String.split(".")
     |> List.last()
     |> String.downcase()
     |> tld_valid?()
   end
 
-  def regexp_validate(email), do: Regex.match?(@email_regex, email)
+  def regexp_validate(email), do: Regex.match?(@email_regex, String.trim(email))
 end
