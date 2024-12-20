@@ -1,0 +1,10 @@
+[tools]
+elixir = "latest"
+
+[tasks."tlds.update"]
+run = """
+curl -o priv/tlds-alpha-by-domain.txt https://data.iana.org/TLD/tlds-alpha-by-domain.txt
+git add priv/
+git commit -m "Update TLD list file"
+"""
+

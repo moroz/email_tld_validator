@@ -18,6 +18,23 @@ defmodule EmailTldValidator do
 
   def tld_valid?(_), do: false
 
+  @doc """
+  Checks whether an email address matches a reasonably comprehensive regular expression
+  and whether the TLD (Top-Level Domain) included in the hostname part of the address is included in the
+  [IANA alphabetic list of TLDs](https://data.iana.org/TLD/tlds-alpha-by-domain.txt).
+
+  ## Examples
+
+      iex> EmailTldValidator.email_valid?("user@example.com")
+      true
+
+      iex> EmailTldValidator.email_valid?("user@example")
+      false
+
+      iex> EmailTldValidator.email_valid?("user@example.foobar")
+      false
+
+  """
   def email_valid?(email) do
     regexp_validate(email) && tld_validate(email)
   end

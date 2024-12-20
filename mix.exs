@@ -4,7 +4,7 @@ defmodule EmailTldValidator.MixProject do
   def project do
     [
       app: :email_tld_validator,
-      version: "0.1.2",
+      version: "0.1.3",
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -13,7 +13,7 @@ defmodule EmailTldValidator.MixProject do
 
       # Docs
       name: "EmailTldValidator",
-      source_url: "https://gitlab.com/moroz2137/email_tld_validator",
+      source_url: "https://github.com/moroz/email_tld_validator",
       docs: [
         main: "readme",
         extras: ["README.md"]
@@ -40,7 +40,7 @@ defmodule EmailTldValidator.MixProject do
       maintainers: ["Karol Moroz <k.j.moroz@gmail.com>"],
       licenses: ["MIT"],
       links: %{
-        "GitLab" => "https://gitlab.com/moroz2137/email_tld_validator"
+        "Github" => "https://github.com/moroz/email_tld_validator"
       }
     ]
   end
@@ -51,7 +51,7 @@ defmodule EmailTldValidator.MixProject do
       {:ecto, ">= 2.0.0"},
 
       # Docs
-      {:ex_doc, "~> 0.19", only: :dev, runtime: false}
+      {:ex_doc, "~> 0.35", only: :dev, runtime: false}
     ]
   end
 end
